@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Oferta del mes | Dylan Studio</title>
+  <meta name="description" content="Oferta del mes Dylan Studio." />
+
+  <link rel="stylesheet" href="../css/styles.css" />
+  <script defer src="../js/main.js"></script>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+
+    <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false">
+      <span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span>
+    </button>
+
+    <a class="brand" href="../index.html" aria-label="Ir a inicio">
+      <img class="brand-logo" src="../assets/logo-dylan-studio.png" alt="Logo Dylan Studio">
+      <span class="brand-word">DYLAN STUDIO</span>
+    </a>
+
+    <nav class="site-nav" aria-label="Navegación principal">
+      <ul class="nav-list">
+        <li><a href="../index.html" class="nav-link">Home</a></li>
+        <li><a href="empresa.html" class="nav-link">Empresa</a></li>
+
+        <li class="nav-item has-dropdown nav-services">
+          <button class="nav-link dropdown-toggle" type="button" aria-expanded="false">
+            Servicios <span class="caret" aria-hidden="true">▾</span>
+          </button>
+          <ul class="dropdown dropdown-services" aria-label="Servicios">
+            <li><a href="branding.html" class="dropdown-link">Branding</a></li>
+            <li><a href="packaging.html" class="dropdown-link">Packaging</a></li>
+            <li><a href="diseno-web.html" class="dropdown-link">Diseño web</a></li>
+            <li><a href="administracion-web.html" class="dropdown-link">Administración web</a></li>
+          </ul>
+        </li>
+
+        <li><a href="oferta.html" class="nav-link">Oferta del mes</a></li>
+        <li><a href="localizacion.html" class="nav-link">Localización</a></li>
+        <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+
+        <li><a href="../admin/login.html" class="nav-link nav-admin">Admin</a></li>
+      </ul>
+    </nav>
+
+  </div>
+</header>
+
+<main class="info-page">
+
+  <section class="info-hero">
+    <div class="container">
+      <p class="info-kicker">Oferta del mes</p>
+      <h1 class="info-h1">Pack de Packaging Esencial</h1>
+      <p class="info-lead">
+        Una opción directa para que tu producto se vea más profesional, más claro y más vendible desde el empaque.
+      </p>
+    </div>
+  </section>
+
+  <section class="info-section">
+    <div class="container info-two-col">
+
+      <div class="info-col info-col-text">
+        <h2 class="info-h2">Qué incluye</h2>
+        <ul class="info-list">
+          <li>Diseño de etiqueta o frente principal.</li>
+          <li>Jerarquía de información y lectura rápida.</li>
+          <li>Versión lista para impresión (arte final).</li>
+          <li>Mockup simple para presentación.</li>
+        </ul>
+
+        <h3 class="info-h3">Para quién es</h3>
+        <p class="info-text">
+          Para productos que necesitan verse más sólidos en percha y también en redes: limpio, coherente y entendible sin esfuerzo.
+        </p>
+
+        <div class="offer-meta">
+          <div class="offer-pill">Cupo limitado</div>
+          <div class="offer-pill">Entrega rápida</div>
+          <div class="offer-pill">B/N o minimal</div>
+        </div>
+
+        <a class="info-cta" href="contacto.html?asunto=Oferta%20del%20mes%20-%20Pack%20Packaging%20Esencial">
+          Solicitar esta oferta →
+        </a>
+      </div>
+
+      <aside class="info-col info-col-media" aria-label="Imagen de la oferta">
+        <figure class="media-card">
+          <img class="media-img" src="../assets/vino-a.jpg" alt="Oferta del mes - Packaging">
+        </figure>
+        <div class="media-caption">
+          <div class="media-title">Ejemplo visual</div>
+          <div class="media-subtitle">Packaging • Dylan Studio</div>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+
+  <section class="info-section">
+    <div class="container">
+
+      <h2 class="info-h2">Ofertas</h2>
+
+      <div id="ofertas-db"></div>
+
+    </div>
+  </section>
+
+  <script>
+  // Consulta las ofertas guardadas en SQL Server.
+
+  const apiUrl = window.DYLAN_API_URL || "http://localhost:3001/api";
+
+  fetch(`${apiUrl}/ofertas`)
+    .then(res => res.json())
+    .then(data => {
+
+      const contenedor = document.getElementById("ofertas-db");
+
+      data.forEach(oferta => {
+
+        contenedor.innerHTML += `
+          <div style="margin-bottom:20px;padding:15px;border:1px solid #ccc;">
+            <h3>${oferta.Titulo}</h3>
+            <p>${oferta.Descripcion}</p>
+            <strong>${oferta.Descuento}% de descuento</strong>
+          </div>
+        `;
+
+      });
+
+    })
+    .catch(error => {
+      console.error("Error cargando ofertas:", error);
+    });
+
+  </script>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p class="footer-text">© <span id="year"></span> Dylan Studio. Todos los derechos reservados.</p>
+  </div>
+</footer>
+</body>
+</html>

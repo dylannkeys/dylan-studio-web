@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin Login | Dylan Studio</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <script defer src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script defer src="login.js"></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html" aria-label="Ir a inicio">
+        <img class="brand-logo" src="../assets/logo-dylan-studio.png" alt="Logo Dylan Studio">
+        <span class="brand-word">DYLAN STUDIO</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div class="section-head">
+        <h1 class="section-title">Acceso Admin</h1>
+        <p class="section-subtitle">Inicia sesión para ver las solicitudes.</p>
+      </div>
+
+      <form id="loginForm" class="lead-form" novalidate style="max-width:520px;">
+        <div class="lead-grid">
+          <div class="field field-full">
+            <label for="user">Usuario</label>
+            <input id="user" type="text" autocomplete="username" required />
+          </div>
+
+          <div class="field field-full">
+            <label for="pass">Contraseña</label>
+            <input id="pass" type="password" autocomplete="current-password" required />
+          </div>
+        </div>
+
+        <div class="lead-actions">
+          <button class="btn-submit" type="submit">
+            <span>Entrar</span><span class="btn-arrow" aria-hidden="true">→</span>
+          </button>
+          <p class="lead-note" id="loginNote" role="status" aria-live="polite"></p>
+        </div>
+
+        <p class="section-subtitle" style="max-width:60ch;"></p>
+      </form>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-text">© <span id="year"></span> Dylan Studio. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>

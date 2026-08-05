@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin | Dylan Studio</title>
+
+  <link rel="stylesheet" href="../css/styles.css" />
+  <script defer src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script defer src="admin.js"></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html" aria-label="Ir a inicio">
+        <img class="brand-logo" src="../assets/logo-dylan-studio.png" alt="Logo Dylan Studio">
+        <span class="brand-word">DYLAN STUDIO</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Admin">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="../index.html">Volver</a></li>
+          <li><button id="btnLogout" class="nav-link nav-admin" type="button">Salir</button></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+
+      <div class="section-head">
+        <h1 class="section-title">Panel de solicitudes</h1>
+      </div>
+
+      <div class="admin-toolbar">
+        <div class="admin-filters">
+          <input id="q" class="admin-input" type="search" placeholder="Buscar por nombre, email, asunto..." />
+
+          <select id="status" class="admin-select">
+            <option value="">Todos</option>
+            <option value="nuevo">Nuevo</option>
+            <option value="en proceso">En proceso</option>
+            <option value="cerrado">Cerrado</option>
+          </select>
+
+        </div>
+      </div>
+
+      <div class="admin-table-wrap">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Fecha</th>
+              <th>Cliente</th>
+              <th>Email</th>
+              <th>Servicio</th>
+              <th>Asunto</th>
+              <th>Estado</th>
+              <th style="width:220px;">Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+
+      <div class="admin-note">
+        <p class="section-subtitle"></p>
+      </div>
+
+    </div>
+  </main>
+</body>
+</html>

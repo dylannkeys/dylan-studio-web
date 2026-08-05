@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Diseño web | Dylan Studio</title>
+  <meta name="description" content="Diseño web: sitios responsivos, claros y dinámicos." />
+
+  <link rel="stylesheet" href="../css/styles.css" />
+  <script defer src="../js/main.js"></script>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false">
+      <span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span>
+    </button>
+
+    <a class="brand" href="../index.html" aria-label="Ir a inicio">
+      <img class="brand-logo" src="../assets/logo-dylan-studio.png" alt="Logo Dylan Studio">
+      <span class="brand-word">DYLAN STUDIO</span>
+    </a>
+
+    <nav class="site-nav" aria-label="Navegación principal">
+      <ul class="nav-list">
+        <li><a href="../index.html" class="nav-link">Home</a></li>
+        <li><a href="empresa.html" class="nav-link">Empresa</a></li>
+
+        <li class="nav-item has-dropdown nav-services">
+          <button class="nav-link dropdown-toggle" type="button" aria-expanded="false">
+            Servicios <span class="caret" aria-hidden="true">▾</span>
+          </button>
+          <ul class="dropdown dropdown-services" aria-label="Servicios">
+            <li><a href="branding.html" class="dropdown-link">Branding</a></li>
+            <li><a href="packaging.html" class="dropdown-link">Packaging</a></li>
+            <li><a href="diseno-web.html" class="dropdown-link">Diseño web</a></li>
+            <li><a href="administracion-web.html" class="dropdown-link">Administración web</a></li>
+          </ul>
+        </li>
+
+        <li><a href="oferta.html" class="nav-link">Oferta del mes</a></li>
+        <li><a href="localizacion.html" class="nav-link">Localización</a></li>
+        <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+        <li><a href="../admin/login.html" class="nav-link nav-admin">Admin</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="service-page">
+
+  <section class="service-hero">
+    <div class="container">
+      <p class="service-kicker">Diseño web</p>
+      <h1 class="service-h1">Web limpia, rápida y pensada para convertir.</h1>
+      <p class="service-lead">
+        Diseñamos y construimos sitios responsivos con estructura clara. Sin distracciones, con orden y buena lectura.
+      </p>
+    </div>
+  </section>
+
+  <section class="service-section">
+    <div class="container">
+      <h2 class="service-h2">Qué incluye</h2>
+      <p class="service-text">
+        Tu web debe ser fácil de navegar, cargar rápido y mostrar tu trabajo de manera contundente.
+      </p>
+
+      <div class="service-points">
+        <article class="service-point">
+          <h3 class="service-point-title">Estructura</h3>
+          <p class="service-point-text">Secciones claras: jerarquía, ritmo visual y orden.</p>
+        </article>
+        <article class="service-point">
+          <h3 class="service-point-title">Responsive</h3>
+          <p class="service-point-text">Adaptación real a móvil, tablet y desktop.</p>
+        </article>
+        <article class="service-point">
+          <h3 class="service-point-title">Interacciones</h3>
+          <p class="service-point-text">JavaScript para detalles sutiles y navegación fluida.</p>
+        </article>
+        <article class="service-point">
+          <h3 class="service-point-title">Código escalable</h3>
+          <p class="service-point-text">Estructura por carpetas y páginas separadas, fácil de mantener.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-cta">
+    <div class="container">
+      <h2 class="service-h2">Hagamos que tu web se vea profesional y funcione mejor.</h2>
+      <p class="service-text">
+        Dime qué necesitas (sitio, landing, portafolio), para cuándo y qué contenido ya tienes listo.
+      </p>
+
+      <form class="lead-form" id="leadForm" novalidate>
+        <input type="hidden" id="leadPage" value="Diseño web">
+
+        <div class="lead-grid">
+          <div class="field">
+            <label for="nombre">Nombre</label>
+            <input id="nombre" name="nombre" type="text" required>
+            <small class="error" data-err-for="nombre"></small>
+          </div>
+
+          <div class="field">
+            <label for="apellido">Apellido</label>
+            <input id="apellido" name="apellido" type="text" required>
+            <small class="error" data-err-for="apellido"></small>
+          </div>
+
+          <div class="field">
+            <label for="empresa">Empresa (Opcional)</label>
+            <input id="empresa" name="empresa" type="text">
+            <small class="error" data-err-for="empresa"></small>
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required>
+            <small class="error" data-err-for="email"></small>
+          </div>
+
+          <div class="field field-full">
+            <label for="servicio">Servicio</label>
+            <select id="servicio" name="servicio" required>
+              <option value="">Selecciona uno</option>
+              <option value="1">Branding</option>
+              <option value="2">Packaging</option>
+              <option value="3" selected>Diseño web</option>
+              <option value="4">Administración web</option>
+            </select>
+            <small class="error" data-err-for="servicio"></small>
+          </div>
+
+          <div class="field field-full">
+            <label for="asunto">Asunto</label>
+            <input id="asunto" name="asunto" type="text" required>
+            <small class="error" data-err-for="asunto"></small>
+          </div>
+
+          <div class="field field-full">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="6" required></textarea>
+            <small class="error" data-err-for="mensaje"></small>
+          </div>
+        </div>
+
+        <div class="lead-actions">
+          <button class="btn-submit" type="submit">
+            <span>Enviar</span><span class="btn-arrow" aria-hidden="true">→</span>
+          </button>
+          <p class="lead-note" id="leadNote" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p class="footer-text">© <span id="year"></span> Dylan Studio. Todos los derechos reservados.</p>
+  </div>
+</footer>
+</body>
+</html>
