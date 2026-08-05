@@ -94,4 +94,4 @@ El formulario público valida tipos y longitudes, limita el cuerpo JSON a 10 KB 
 
 ## Autor
 
-Dylan Moyano
+Dylan Moreno
