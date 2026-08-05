@@ -1,6 +1,6 @@
 # Dylan Studio
 
-Sitio web multipágina para un estudio creativo especializado en branding, packaging, diseño web y administración web. Incluye un formulario de solicitudes, contenido dinámico de ofertas y noticias, y un panel administrativo.
+Sitio web multipágina para un estudio creativo especializado en branding, packaging, diseño web y administración web. Incluye un formulario de solicitudes, contenido dinámico de ofertas y un panel administrativo.
 
 ## Tecnologías
 
